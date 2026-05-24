@@ -134,6 +134,7 @@ function clearSelectedRoles() {
 }
 
 function selectAllRoles() {
+    allRoles = [];
     $('#roleList').find('code').each(function () {
         var roleCode = $(this).attr('id');
         var roleName = $(this).closest('li').find('.form-check-label').text();

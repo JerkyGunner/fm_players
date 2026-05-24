@@ -15,24 +15,29 @@ async function loadSeedData() {
         if (seedData) {
             dispatchSeedDataLoadedEvent(seedData);
             populateRolesList();
+            updateUIFromStoredSelection();
+            updateSelectedRolesSummary();
             return JSON.parse(seedData);
         }
 
-        const response = await fetch('../assets/data/roles.json');
+        const response = await fetch('assets/data/roles.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
 
-        seedData = localStorage.setItem(seedDataKey, JSON.stringify(data));
+        seedData = JSON.stringify(data);
+        localStorage.setItem(seedDataKey, seedData);
         showToast("Base attribute weightings have been imported and saved.", 'Seed Data Success', 'success');
         dispatchSeedDataLoadedEvent(seedData);
             
         populateRolesList();
+        updateUIFromStoredSelection();
+        updateSelectedRolesSummary();
         return data;
 
     } catch (error) {
-        showToast('There has been an error downloading the attribute weightings. Please try again.', "Error!", 'error');
+        showToast('There was an error loading the bundled attribute weightings. Please try again.', "Error!", 'error');
         console.log(error);
     }
 }
