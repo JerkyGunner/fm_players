@@ -21,17 +21,8 @@ function initializeBootstrapTable(data) {
         },
         { field: 'Nationality', title: 'Nat', titleTooltip: 'Nationality', sortable: true },
         { field: 'Position', title: 'Position', sortable: true },
-        { field: 'Personality', title: 'Personality', sortable: true },
-        { field: 'Media Handling', title: 'Media Handling', sortable: true },
         { field: 'Left Foot', title: 'Left Foot', sortable: true },
         { field: 'Right Foot', title: 'Right Foot', sortable: true },
-        { field: 'Speed', title: 'Spd', titleTooltip: 'Speed', sortable: true },
-        { field: 'Jum', title: 'Jmp', titleTooltip: 'Jump', sortable: true },
-        { field: 'Str', title: 'Str', titleTooltip: 'Strength', sortable: true },
-        { field: 'Workrate', title: 'Work', titleTooltip: 'Workrate', sortable: true },
-        { field: 'Height', title: 'Height', sortable: true },
-
-
     ];
 
     // Retrieve selectedRoles from localStorage and append as dynamic columns
@@ -42,7 +33,14 @@ function initializeBootstrapTable(data) {
 
     columns.push(
         { field: 'HighestScore', title: 'Highest Role Score', sortable: true },
-        { field: 'HighestScoringRole', title: 'Resulting Role', sortable: true }
+        { field: 'HighestScoringRole', title: 'Resulting Role', sortable: true },
+        { field: 'Personality', title: 'Personality', sortable: true },
+        { field: 'Media Handling', title: 'Media Handling', sortable: true },
+        { field: 'Speed', title: 'Spd', titleTooltip: 'Speed', sortable: true },
+        { field: 'Jum', title: 'Jmp', titleTooltip: 'Jump', sortable: true },
+        { field: 'Str', title: 'Str', titleTooltip: 'Strength', sortable: true },
+        { field: 'Workrate', title: 'Work', titleTooltip: 'Workrate', sortable: true },
+        { field: 'Height', title: 'Height', sortable: true }
         );
 
     var $table = $('#playersTable')
