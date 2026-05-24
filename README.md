@@ -1,28 +1,51 @@
-## Installation and Setup
+# FM Players
 
-### Cloning the Repository
+`fm_players` is a browser-based tool for scoring Football Manager player exports against role attribute weightings.
 
-1.  **Install Git**: Ensure Git is installed on your system. If not, download and install from [Git's official site](https://git-scm.com/).
-2.  **Clone the Repository**: Open a terminal/command prompt and run the following command:
-    
-    bashCopy code
-    
-    `git clone https://github.com/HarrisonRClark/fm_client_app` 
-    
+## How it works
 
+The app ships with a built-in set of role weightings stored in `assets/data/roles.json`.
 
-### Setting Up the Development Environment
-For me personally, this is my dev environment:
-1.  **Install Visual Studio Code**: If not already installed, download and install VS Code from [here](https://code.visualstudio.com/).
-2.  **Install Live Server Extension**:
-    -   Open VS Code.
-    -   Go to the Extensions view by clicking on the square icon on the sidebar or pressing `Ctrl+Shift+X`.
-    -   Search for "Live Server" and install the extension by Ritwick Dey.
+When you use the app:
 
-### Running the Application
+1. Select one or more roles to score against.
+2. Upload an exported Football Manager HTML file.
+3. The app reads the table in your browser.
+4. Each player is scored against the selected role weightings.
+5. The results table shows role scores, the best-matching role, and a few utility metrics.
 
-1.  **Open the Project in VS Code**: Open the cloned FM Client App folder in Visual Studio Code.
-2.  **Start Live Server**:
-    -   Right-click on `index.html`.
-    -   Select `Open with Live Server`.
-    -   This will launch the FM Client App in your default web browser and enable hot reloading.
+All processing happens in the browser. The app does not need a backend server or database.
+
+## Expected input
+
+The uploaded file should be:
+
+- An HTML export from Football Manager
+- In English
+- Exported with all required attributes visible
+
+If expected columns are missing, score calculation will fail and the app will show an error.
+
+## Role weightings
+
+The default role weightings are loaded from `assets/data/roles.json` and then cached in browser storage.
+
+You can:
+
+- Select which roles to include in scoring
+- Edit role weightings in the app
+- Restore the default weightings from the bundled JSON file
+
+## Running locally
+
+Because this is a static web app, you can run it with any simple local web server.
+
+One easy option is:
+
+1. Open the project folder in Visual Studio Code.
+2. Start a local server such as the Live Server extension.
+3. Open `index.html` through that local server.
+
+## Hosting
+
+This project can be hosted as a static site on services such as GitHub Pages or Cloudflare Pages.
