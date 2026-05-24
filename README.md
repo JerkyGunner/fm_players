@@ -26,6 +26,16 @@ The uploaded file should be:
 
 If expected columns are missing, score calculation will fail and the app will show an error.
 
+## Included FM views
+
+The repository includes Football Manager view files in `FMviews/`:
+
+- `all_attributes_shortlist.fmf`
+- `all_attributes_squad.fmf`
+- `player search all attributes.fmf`
+
+These can be imported into Football Manager to help produce compatible HTML exports with the attributes this app expects.
+
 ## Role weightings
 
 The default role weightings are loaded from `assets/data/roles.json` and then cached in browser storage.
